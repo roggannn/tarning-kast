@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onload="roll();">
+    z
+    <div id="container"> 
+        <img src="Tarning1.png" class="dice" alt="">
+        <img src="Tarning2.png" class="dice" alt="">
+        <img src="Tarning3.png" class="dice" alt="">
+        <img src="Tarning4.png" class="dice" alt="">
+        <img src="Tarning5.png" class="dice" alt="">
+        <img src="Tarning6.png" class="dice" alt="">
+        <div id="checkboxes">
+            <input type="checkbox" id="checkbox1">
+            <label for="checkbox1">Tärning 1</label>
+            <br>
+            <input type="checkbox" id="checkbox2">
+            <label for="checkbox2">Tärning 2</label>
+            <br>
+            <input type="checkbox" id="checkbox3">
+            <label for="checkbox3">Tärning 3</label>
+            <br>
+            <input type="checkbox" id="checkbox4">
+            <label for="checkbox4">Tärning 4</label>
+            <br>
+            <input type="checkbox" id="checkbox5" onchange="check(5);">
+            <label for="checkbox5">Tärning 5</label>
+            <br>
+            <input type="checkbox" id="checkbox6">
+            <label for="checkbox6">Tärning 6</label>
+
+        </div>
+        <button onclick="roll()"> kaSTA </button>
+
+    </div>
+    <script>
+        function roll(){
+            dice= document.getElementsByClassName("dice")
+            for(let i =0;i < 6; i++){
+                Number= Math.floor( Math.random()*6) + 1
+                dice[i].src = "Tarning" + Number + ".png"
+            }
+        }
+    </script>
+    <script>
+        let number;
+
+        function check(id){
+            dice= document.getElementsByClassName("dice")
+            let checkbox = checkbox + id;
+            if (checkbox.checked == true){
+                dice[id].style.display = false;
+            }
+            
+        }
+    </script>
+</body>
+</html>
